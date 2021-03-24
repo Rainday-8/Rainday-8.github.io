@@ -1,245 +1,402 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html lang="zh-CN">
 <head>
-  
-  <title>Tags：Java面试 - Rainday</title>
   <meta charset="UTF-8">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  
-  
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta property="og:type" content="website">
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="贵在坚持，难在坚持，成在坚持">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Rainday">
 <meta property="og:url" content="http://example.com/tags/Java%E9%9D%A2%E8%AF%95/index.html">
 <meta property="og:site_name" content="Rainday">
-<meta property="og:locale" content="en_US">
+<meta property="og:description" content="贵在坚持，难在坚持，成在坚持">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Liang">
 <meta name="twitter:card" content="summary">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
-  
-  <link rel="stylesheet" href="/css/style.css?v=1616592549727">
-<meta name="generator" content="Hexo 5.4.0"></head>
 
-<body class="mdui-drawer-body-left">
-  
-  <div id="nexmoe-background">
-    <div class="nexmoe-bg" style="background-image: url(/img/bizhi.jpg)"></div>
-    <div class="mdui-appbar mdui-shadow-0">
-      <div class="mdui-toolbar">
-        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
-        <div class="mdui-toolbar-spacer"></div>
-        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-        <a href="/" title="Liang" class="mdui-btn mdui-btn-icon"><img src="/img/avatar.jpg" alt="Liang"></a>
-       </div>
-    </div>
-  </div>
-  <div id="nexmoe-header">
-      <div class="nexmoe-drawer mdui-drawer" id="drawer">
-    <div class="nexmoe-avatar mdui-ripple">
-        <a href="/" title="Liang">
-            <img src="/img/avatar.jpg" alt="Liang" alt="Liang">
-        </a>
-    </div>
-    <div class="nexmoe-count">
-        <div><span>Articles</span>2</div>
-        <div><span>Tags</span>2</div>
-        <div><span>Categories</span>0</div>
-    </div>
-    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
-        
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
-            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
-            <div class="mdui-list-item-content">
-                回到首页
-            </div>
-        </a>
-        
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
-            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
-            <div class="mdui-list-item-content">
-                关于博客
-            </div>
-        </a>
-        
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
-            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
-            <div class="mdui-list-item-content">
-                我的朋友
-            </div>
-        </a>
-        
-    </div>
-    <aside id="nexmoe-sidebar">
-  
-  <div class="nexmoe-widget-wrap">
-    <div class="nexmoe-widget nexmoe-search">
-        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
-            <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
-        </form>
-    </div>
-</div>
-  
-  <div class="nexmoe-widget-wrap">
-    <div class="nexmoe-widget nexmoe-social">
-        <a class="mdui-ripple" href="https://jq.qq.com/?_wv=1027&k=5CfKHun" target="_blank" mdui-tooltip="{content: 'QQ群'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
-            <i class="nexmoefont icon-QQ"></i>
-        </a><a class="mdui-ripple" href="https://space.bilibili.com/20238211" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
-            <i class="nexmoefont icon-bilibili"></i>
-        </a><a class="mdui-ripple" href="https://github.com/nexmoe/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
-            <i class="nexmoefont icon-github"></i>
-        </a>
-    </div>
-</div>
-  
-  
-
-  
-  
-  <div class="nexmoe-widget-wrap">
-    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
-      <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">Java面试</a>
-    </div>
-    
-  </div>
-
-  
-  
-  <div class="nexmoe-widget-wrap">
-    <h3 class="nexmoe-widget-title">Archive</h3>
-    <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-  </div>
+<link rel="canonical" href="http://example.com/tags/Java%E9%9D%A2%E8%AF%95/">
 
 
-<style>
-.nexmoe-widget .archive-list-count{
-	position : absolute;
-	right: 15px;
-	top:9px;
-	color: #DDD;
-}
-</style>
-
-  
-</aside>
-    <div class="nexmoe-copyright">
-        &copy; 2021 Liang
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
-    </div>
-</div><!-- .nexmoe-drawer -->
-  </div>
-  <div id="nexmoe-content">
-    <div class="nexmoe-primary">
-        <section class="nexmoe-posts">
-    
-    <div class="nexmoe-post">
-        <a href="/2021/03/22/Java%E9%9D%A2%E8%AF%95%E9%A2%98-%E4%B8%80/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
-                    <img data-src="/img/bizhi.jpg" data-sizes="auto" alt="Java面试题(一)" class="lazyload">
-                    <h1>Java面试题(一)</h1>
-                </div>
-            
-        </a>
-
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2021年03月22日</a>
-            <a><i class="nexmoefont icon-areachart"></i>1k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
-        </div>
-
-        <article>
-            
-                <h1 id="Java面试题"><a href="#Java面试题" class="headerlink" title="Java面试题"></a>Java面试题</h1><h2 id="1-String、StringBuffer和StringBuild的区别"><a href="#1-String、StringBuffer和StringBuild的区别" class="headerlink" title="1.String、StringBuffer和StringBuild的区别"></a>1.String、StringBuffer和StringBuild的区别</h2><h4 id="String（不可变、线程安全）：字符串常量，字符串长度不可变；内部通过final修饰的char数组存放字符，因此只能赋值一次，不可更改"><a href="#String（不可变、线程安全）：字符串常量，字符串长度不可变；内部通过final修饰的char数组存放字符，因此只能赋值一次，不可更改" class="headerlink" title="String（不可变、线程安全）：字符串常量，字符串长度不可变；内部通过final修饰的char数组存放字符，因此只能赋值一次，不可更改"></a>String（<strong>不可变、线程安全</strong>）：字符串常量，字符串长度不可变；内部通过<strong>final修饰的char数组</strong>存放字符，因此只能赋值一次，不可更改</h4><h4 id="StringBuffer（可变、线程安全）：字符串变量；StringBuffer的所有公开方法都是用过synchronized修饰的"><a href="#StringBuffer（可变、线程安全）：字符串变量；StringBuffer的所有公开方法都是用过synchronized修饰的" class="headerlink" title="StringBuffer（可变、线程安全）：字符串变量；StringBuffer的所有公开方法都是用过synchronized修饰的"></a>StringBuffer（<strong>可变、线程安全</strong>）：字符串变量；StringBuffer的所有公开方法都是用过<strong>synchronized</strong>修饰的</h4><h4 id="StringBuild（可变、线程不安全）"><a href="#StringBuild（可变、线程不安全）" class="headerlink" title="StringBuild（可变、线程不安全）"></a>StringBuild（<strong>可变、线程不安全</strong>）</h4><h4 id="String是不可变的对象，因此在每次对String类型进行改变的时候，都会生成一个新的String对象，然后指针指向新的String对象；使用StringBuffer类时，每次都会对StringBuffer对象本身进行操作，而不是生成新的对象并指向对象引用；"><a href="#String是不可变的对象，因此在每次对String类型进行改变的时候，都会生成一个新的String对象，然后指针指向新的String对象；使用StringBuffer类时，每次都会对StringBuffer对象本身进行操作，而不是生成新的对象并指向对象引用；" class="headerlink" title="String是不可变的对象，因此在每次对String类型进行改变的时候，都会生成一个新的String对象，然后指针指向新的String对象；使用StringBuffer类时，每次都会对StringBuffer对象本身进行操作，而不是生成新的对象并指向对象引用；"></a>String是不可变的对象，因此在每次对String类型进行改变的时候，都会生成一个新的String对象，然后指针指向新的String对象；使用StringBuffer类时，每次都会对StringBuffer对象本身进行操作，而不是生成新的对象并指向对象引用；</h4><h2 id="2-int和Integer的区别"><a href="#2-int和Integer的区别" class="headerlink" title="2.int和Integer的区别"></a>2.int和Integer的区别</h2><ul>
-<li><h4 id="int是基本数据类型；Integer是int的包装类"><a href="#int是基本数据类型；Integer是int的包装类" class="headerlink" title="int是基本数据类型；Integer是int的包装类"></a>int是<strong>基本数据类型</strong>；Integer是int的<strong>包装类</strong></h4></li>
-<li><h4 id="Integer变量必须实例化后才能使用；int变量不需要"><a href="#Integer变量必须实例化后才能使用；int变量不需要" class="headerlink" title="Integer变量必须实例化后才能使用；int变量不需要"></a>Integer变量必须实例化后才能使用；int变量不需要</h4></li>
-<li><h4 id="Integer实际是对象的引用，指向new的Integer对象；int是直接存储数据值"><a href="#Integer实际是对象的引用，指向new的Integer对象；int是直接存储数据值" class="headerlink" title="Integer实际是对象的引用，指向new的Integer对象；int是直接存储数据值"></a>Integer实际是<strong>对象的引用</strong>，指向new的Integer对象；int是直接存储数据值</h4></li>
-<li><h4 id="Integer的默认值是null；int的默认值是0"><a href="#Integer的默认值是null；int的默认值是0" class="headerlink" title="Integer的默认值是null；int的默认值是0"></a>Integer的默认值是<strong>null</strong>；int的默认值是<strong>0</strong></h4></li>
-</ul>
-<h2 id="3-数组（Array）和列表（ArrayList）的区别？什么时候应该使用Array而不是ArrayList？"><a href="#3-数组（Array）和列表（ArrayList）的区别？什么时候应该使用Array而不是ArrayList？" class="headerlink" title="3.数组（Array）和列表（ArrayList）的区别？什么时候应该使用Array而不是ArrayList？"></a>3.数组（Array）和列表（ArrayList）的区别？什么时候应该使用Array而不是ArrayList？</h2><h4 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h4><ul>
-<li><h4 id="Array数组可以包含基本数据类型和对象类型；ArrayList只能包含对象类型"><a href="#Array数组可以包含基本数据类型和对象类型；ArrayList只能包含对象类型" class="headerlink" title="Array数组可以包含基本数据类型和对象类型；ArrayList只能包含对象类型"></a>Array数组可以包含<strong>基本数据类型和对象类型</strong>；ArrayList<strong>只能包含对象类型</strong></h4></li>
-<li><h4 id="Array数组在存放的时候一定是同种类型的元素；ArrayList不一定"><a href="#Array数组在存放的时候一定是同种类型的元素；ArrayList不一定" class="headerlink" title="Array数组在存放的时候一定是同种类型的元素；ArrayList不一定"></a>Array数组在存放的时候<strong>一定是同种类型的元素</strong>；ArrayList<strong>不一定</strong></h4></li>
-<li><h4 id="Array数组的空间大小是固定的，需要事先确定合适的空间大小；ArrayList的空间是动态增长的，每次添加新的元素的时候都会检查内部数组的空间是否足够"><a href="#Array数组的空间大小是固定的，需要事先确定合适的空间大小；ArrayList的空间是动态增长的，每次添加新的元素的时候都会检查内部数组的空间是否足够" class="headerlink" title="Array数组的空间大小是固定的，需要事先确定合适的空间大小；ArrayList的空间是动态增长的，每次添加新的元素的时候都会检查内部数组的空间是否足够"></a>Array数组的<strong>空间大小是固定的</strong>，需要事先确定合适的空间大小；ArrayList的空间是<strong>动态增长</strong>的，每次添加新的元素的时候都会检查内部数组的空间是否足够</h4></li>
-</ul>
-<h2 id="4-什么是值传递和引用传递？"><a href="#4-什么是值传递和引用传递？" class="headerlink" title="4.什么是值传递和引用传递？"></a>4.什么是值传递和引用传递？</h2><ol>
-<li><h4 id="值传递是对基本数据类型的变量而言的，传递的是该变量的一个副本，改变副本不影响原变量"><a href="#值传递是对基本数据类型的变量而言的，传递的是该变量的一个副本，改变副本不影响原变量" class="headerlink" title="值传递是对基本数据类型的变量而言的，传递的是该变量的一个副本，改变副本不影响原变量"></a>值传递是对<strong>基本数据类型</strong>的变量而言的，传递的是该变量的一个副本，改变副本不影响原变量</h4></li>
-<li><h4 id="引用传递一般是对于对象型变量而言的，传递的是该对象地址的一个副本，并不是原对象本身"><a href="#引用传递一般是对于对象型变量而言的，传递的是该对象地址的一个副本，并不是原对象本身" class="headerlink" title="引用传递一般是对于对象型变量而言的，传递的是该对象地址的一个副本，并不是原对象本身"></a>引用传递一般是对于<strong>对象型变量</strong>而言的，传递的是该对象地址的一个副本，并不是原对象本身</h4></li>
-<li><h4 id="一般认为，java内的基础类型数据传递都是值传递；实例对象的传递是引用传递"><a href="#一般认为，java内的基础类型数据传递都是值传递；实例对象的传递是引用传递" class="headerlink" title="一般认为，java内的基础类型数据传递都是值传递；实例对象的传递是引用传递"></a>一般认为，java内的<strong>基础类型数据传递都是值传递</strong>；<strong>实例对象的传递是引用传递</strong></h4></li>
-</ol>
-<h2 id="5-Java支持的数据类型有哪些？什么是自动拆装箱？"><a href="#5-Java支持的数据类型有哪些？什么是自动拆装箱？" class="headerlink" title="5.Java支持的数据类型有哪些？什么是自动拆装箱？"></a>5.Java支持的数据类型有哪些？什么是自动拆装箱？</h2><h3 id="Java支持的数据类型："><a href="#Java支持的数据类型：" class="headerlink" title="Java支持的数据类型："></a>Java支持的数据类型：</h3><ul>
-<li><h4 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a><strong>基本数据类型</strong></h4><ul>
-<li><h5 id="整数型-byte、short、int、long"><a href="#整数型-byte、short、int、long" class="headerlink" title="整数型(byte、short、int、long)"></a>整数型(<code>byte、short、int、long</code>)</h5></li>
-<li><h5 id="浮点型-float、double"><a href="#浮点型-float、double" class="headerlink" title="浮点型(float、double)"></a>浮点型(<code>float、double</code>)</h5></li>
-<li><h5 id="布尔型-boolean"><a href="#布尔型-boolean" class="headerlink" title="布尔型(boolean)"></a>布尔型(<code>boolean</code>)</h5></li>
-<li><h5 id="字节型-char"><a href="#字节型-char" class="headerlink" title="字节型(char)"></a>字节型(<code>char</code>)</h5></li>
-</ul>
-</li>
-<li><h4 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a><strong>引用数据类型</strong></h4><ul>
-<li><h5 id="数组、接口、类"><a href="#数组、接口、类" class="headerlink" title="数组、接口、类"></a>数组、接口、类</h5></li>
-</ul>
-</li>
-</ul>
-<h3 id="自动拆装箱：基本数据类型和引用数据类型之间的自动转换"><a href="#自动拆装箱：基本数据类型和引用数据类型之间的自动转换" class="headerlink" title="自动拆装箱：基本数据类型和引用数据类型之间的自动转换**"></a>自动拆装箱：<strong>基本数据类型和引用数据类型之间的自动转换</strong>**</h3><h4 id="自动拆装箱何时发生？"><a href="#自动拆装箱何时发生？" class="headerlink" title="自动拆装箱何时发生？"></a>自动拆装箱何时发生？</h4><ul>
-<li><h5 id="在调用方法时把基本数据类型作为参数，但是参数的类型是基本数据类型的包装类时"><a href="#在调用方法时把基本数据类型作为参数，但是参数的类型是基本数据类型的包装类时" class="headerlink" title="在调用方法时把基本数据类型作为参数，但是参数的类型是基本数据类型的包装类时"></a>在调用方法时把基本数据类型作为参数，但是参数的类型是基本数据类型的包装类时</h5></li>
-<li><h5 id="给基本数据类型的包装类赋值为基本数据类型时"><a href="#给基本数据类型的包装类赋值为基本数据类型时" class="headerlink" title="给基本数据类型的包装类赋值为基本数据类型时"></a>给基本数据类型的包装类赋值为基本数据类型时</h5></li>
-</ul>
-<h2 id="6-为什么会出现4-0-3-6-4-0000001这种现象？"><a href="#6-为什么会出现4-0-3-6-4-0000001这种现象？" class="headerlink" title="6.为什么会出现4.0-3.6=4.0000001这种现象？"></a>6.为什么会出现4.0-3.6=4.0000001这种现象？</h2><ul>
-<li><strong>浮点数值采用二进制系统表示</strong>，在二进制系统中无法精确地表示分数1/10</li>
-<li>计算机在计算十进制小数的过程中要先转换为二进制进行计算，这个过程中出现了误差</li>
-</ul>
-<h2 id="7-Java8的新特性？"><a href="#7-Java8的新特性？" class="headerlink" title="7.Java8的新特性？"></a>7.Java8的新特性？</h2><ul>
-<li><h3 id="Java语言的新特性"><a href="#Java语言的新特性" class="headerlink" title="Java语言的新特性"></a>Java语言的新特性</h3><ul>
-<li><h5 id="Lambda表达式和函数式接口"><a href="#Lambda表达式和函数式接口" class="headerlink" title="Lambda表达式和函数式接口"></a>Lambda表达式和函数式接口</h5></li>
-<li><h5 id="接口的默认方法和静态方法"><a href="#接口的默认方法和静态方法" class="headerlink" title="接口的默认方法和静态方法"></a>接口的默认方法和静态方法</h5></li>
-<li><h5 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a>方法引用</h5></li>
-<li><h5 id="重复注解"><a href="#重复注解" class="headerlink" title="重复注解"></a>重复注解</h5></li>
-<li><h5 id="更好的类型推断"><a href="#更好的类型推断" class="headerlink" title="更好的类型推断"></a>更好的类型推断</h5></li>
-<li><h5 id="拓宽注解的应用场景"><a href="#拓宽注解的应用场景" class="headerlink" title="拓宽注解的应用场景"></a>拓宽注解的应用场景</h5></li>
-</ul>
-</li>
-<li><h3 id="等等"><a href="#等等" class="headerlink" title="等等"></a>等等</h3></li>
-</ul>
-<h2 id="8-和equals的区别"><a href="#8-和equals的区别" class="headerlink" title="8.==和equals的区别"></a>8.<code>==</code>和<code>equals</code>的区别</h2><h3 id="一般比较的是值是否相等"><a href="#一般比较的是值是否相等" class="headerlink" title="==:一般比较的是值是否相等"></a><code>==</code>:一般比较的是<strong>值是否相等</strong></h3><ul>
-<li><h5 id="对于基本数据类型的变量，直接对其值进行比较"><a href="#对于基本数据类型的变量，直接对其值进行比较" class="headerlink" title="对于基本数据类型的变量，直接对其值进行比较"></a>对于基本数据类型的变量，直接对其值进行比较</h5></li>
-<li><h5 id="对于引用数据类型的变量，则是对其内存地址进行比较"><a href="#对于引用数据类型的变量，则是对其内存地址进行比较" class="headerlink" title="对于引用数据类型的变量，则是对其内存地址进行比较"></a>对于引用数据类型的变量，则是对其内存地址进行比较</h5></li>
-</ul>
-<h3 id="equals-：一般比较内容是否相同"><a href="#equals-：一般比较内容是否相同" class="headerlink" title="equals()：一般比较内容是否相同"></a><code>equals</code>()：一般比较<strong>内容是否相同</strong></h3><ul>
-<li><h5 id="在没有重写equals方法之前，Object类中的equals方法直接调用-，因此与-没有区别；但是equals不能作用于基本数据类型的变量"><a href="#在没有重写equals方法之前，Object类中的equals方法直接调用-，因此与-没有区别；但是equals不能作用于基本数据类型的变量" class="headerlink" title="在没有重写equals方法之前，Object类中的equals方法直接调用==，因此与==没有区别；但是equals不能作用于基本数据类型的变量"></a>在没有重写equals方法之前，Object类中的equals方法直接调用==，因此与==没有区别；但是equals不能作用于基本数据类型的变量</h5></li>
-<li><h5 id="诸如String、Date等类对equals方法进行了重写的话，比较的是所指向的对象的内容"><a href="#诸如String、Date等类对equals方法进行了重写的话，比较的是所指向的对象的内容" class="headerlink" title="诸如String、Date等类对equals方法进行了重写的话，比较的是所指向的对象的内容"></a>诸如String、Date等类对equals方法进行了重写的话，比较的是所指向的对象的内容</h5></li>
-</ul>
-<h2 id="9-为什么重写equals还要重写hashCode？"><a href="#9-为什么重写equals还要重写hashCode？" class="headerlink" title="9.为什么重写equals还要重写hashCode？"></a>9.为什么重写<code>equals</code>还要重写<code>hashCode</code>？</h2><h2 id="10-Object若不重写hashCode-的话，hashCode-如何计算出来的？"><a href="#10-Object若不重写hashCode-的话，hashCode-如何计算出来的？" class="headerlink" title="10.Object若不重写hashCode()的话，hashCode()如何计算出来的？"></a>10.Object若不重写hashCode()的话，hashCode()如何计算出来的？</h2><h4 id="Object的hashCode方法是本地方法，该方法直接返回对象的内存地址"><a href="#Object的hashCode方法是本地方法，该方法直接返回对象的内存地址" class="headerlink" title="Object的hashCode方法是本地方法，该方法直接返回对象的内存地址"></a><strong>Object的hashCode方法是本地方法，该方法直接返回对象的内存地址</strong></h4>
-            
-        </article>
-    </div>
-    
-</section>
-
-    </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
-<script>
-	hljs.initHighlightingOnLoad();
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
- <script src="/js/app.js?v=1616592549728"></script>
-
+  <title>标签: Java面试 | Rainday</title>
   
 
 
 
 
 
-</body>
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Rainday</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">云墨下的陌</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">1</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">2</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content tag">
+            
+
+  
+  
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h2 class="collection-header">Java面试
+          <small>标签</small>
+        </h2>
+      </div>
+
+      
+    <div class="collection-year">
+      <span class="collection-header">2021</span>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-03-22T20:34:18+08:00"
+              content="2021-03-22">
+          03-22
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/03/22/Java%E9%9D%A2%E8%AF%95%E9%A2%98-%E4%B8%80/" itemprop="url">
+            <span itemprop="name">Java面试题(一)</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+    </div>
+  </div>
+  
+  
+  
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Liang"
+      src="/images/header.jpg">
+  <p class="site-author-name" itemprop="name">Liang</p>
+  <div class="site-description" itemprop="description">贵在坚持，难在坚持，成在坚持</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
 </html>
