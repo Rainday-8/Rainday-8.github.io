@@ -1,233 +1,195 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  <title>Java面试题(一) | Rainday</title>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <!-- keywords -->
-  
-
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java面试题1.String、StringBuffer和StringBuild的区别String（不可变、线程安全）：字符串常量，字符串长度不可变；内部通过final修饰的char数组存放字符，因此只能赋值一次，不可更改StringBuffer（可变、线程安全）：字符串变量；StringBuffer的所有公开方法都是用过synchronized修饰的StringBuild（可变、线程不安全）St">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Java面试题(一)">
-<meta property="og:url" content="http://example.com/2021/03/22/Java%E9%9D%A2%E8%AF%95%E9%A2%98-%E4%B8%80/index.html">
-<meta property="og:site_name" content="Rainday">
-<meta property="og:description" content="Java面试题1.String、StringBuffer和StringBuild的区别String（不可变、线程安全）：字符串常量，字符串长度不可变；内部通过final修饰的char数组存放字符，因此只能赋值一次，不可更改StringBuffer（可变、线程安全）：字符串变量；StringBuffer的所有公开方法都是用过synchronized修饰的StringBuild（可变、线程不安全）St">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-03-22T12:34:18.000Z">
-<meta property="article:modified_time" content="2021-03-22T12:40:48.565Z">
-<meta property="article:author" content="Liang">
-<meta property="article:tag" content="Java面试">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternative" href="/atom.xml" title="Rainday" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4177375748,2484660470&fm=11&gp=0.jpg">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-  
-
-  
-<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
-
-  
-<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <meta name="author" content="Liang">
 
 
-  
-      <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-<script>AV.initialize("TaapA5ogXTuWUdwMSMrXxldT-gzGzoHsz", "d2NT8BIiI29LXKJYsmyW5vsY");</script>
+    <meta name="subtitle" content="云墨下的陌">
 
-<script src="/js/Counter.js"></script>
 
-  
+
+
+<title>Java面试题(一) | Rainday</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
 <meta name="generator" content="Hexo 5.4.0"></head>
 <body>
-  <div id="container">
-    <div id="particles-js"></div>
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img lazy-src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4177375748,2484660470&amp;fm=11&amp;gp=0.jpg" class="js-avatar">
-			
-		</a>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Bentham&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
 
-		<hgroup>
-		  <h1 class="header-author"><a href="/"></a></h1>
-		</hgroup>
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Bentham&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+            </div>
+        </div>
+    </nav>
 
-		
-
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>标签</li>
-						
-						<li>友情链接</li>
-						
-						
-					</ul>
-				</div>
-			</div>
-		
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">主页</a></li>
-				        
-							<li><a href="/archives">所有文章</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">Java面试</a>
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
-			        
-			        </div>
-				</section>
-				
-
-				
-			</div>
-		</div>
-	</header>				
-</div>
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
     </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide"></h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-				<img lazy-src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4177375748,2484660470&amp;fm=11&amp;gp=0.jpg" class="js-avatar">
-			</div>
-			<hgroup>
-			  <h1 class="header-author"></h1>
-			</hgroup>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/archives">所有文章</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-				</div>
-			</nav>
-		</header>				
-	</div>
-</nav>
-      <div class="body-wrap"><article id="post-Java面试题-一" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/03/22/Java%E9%9D%A2%E8%AF%95%E9%A2%98-%E4%B8%80/" class="article-date">
-  	<time datetime="2021-03-22T12:34:18.000Z" itemprop="datePublished">2021-03-22</time>
-</a>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
     </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Java面试题(一)
-      
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java%E9%9D%A2%E8%AF%95/" rel="tag">Java面试</a></li></ul>
-	</div>
-
-        
-
-        
-          
-<div class="counter-tag counter">
-    <span id="/2021/03/22/Java%E9%9D%A2%E8%AF%95%E9%A2%98-%E4%B8%80/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="Java面试题(一)">
-         &nbsp;
-        view
-    </span>
 </div>
 
-        
-        <div class="clearfix"></div>
-      </div>
-      
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Java面试题"><a href="#Java面试题" class="headerlink" title="Java面试题"></a>Java面试题</h1><h2 id="1-String、StringBuffer和StringBuild的区别"><a href="#1-String、StringBuffer和StringBuild的区别" class="headerlink" title="1.String、StringBuffer和StringBuild的区别"></a>1.String、StringBuffer和StringBuild的区别</h2><h4 id="String（不可变、线程安全）：字符串常量，字符串长度不可变；内部通过final修饰的char数组存放字符，因此只能赋值一次，不可更改"><a href="#String（不可变、线程安全）：字符串常量，字符串长度不可变；内部通过final修饰的char数组存放字符，因此只能赋值一次，不可更改" class="headerlink" title="String（不可变、线程安全）：字符串常量，字符串长度不可变；内部通过final修饰的char数组存放字符，因此只能赋值一次，不可更改"></a>String（<strong>不可变、线程安全</strong>）：字符串常量，字符串长度不可变；内部通过<strong>final修饰的char数组</strong>存放字符，因此只能赋值一次，不可更改</h4><h4 id="StringBuffer（可变、线程安全）：字符串变量；StringBuffer的所有公开方法都是用过synchronized修饰的"><a href="#StringBuffer（可变、线程安全）：字符串变量；StringBuffer的所有公开方法都是用过synchronized修饰的" class="headerlink" title="StringBuffer（可变、线程安全）：字符串变量；StringBuffer的所有公开方法都是用过synchronized修饰的"></a>StringBuffer（<strong>可变、线程安全</strong>）：字符串变量；StringBuffer的所有公开方法都是用过<strong>synchronized</strong>修饰的</h4><h4 id="StringBuild（可变、线程不安全）"><a href="#StringBuild（可变、线程不安全）" class="headerlink" title="StringBuild（可变、线程不安全）"></a>StringBuild（<strong>可变、线程不安全</strong>）</h4><h4 id="String是不可变的对象，因此在每次对String类型进行改变的时候，都会生成一个新的String对象，然后指针指向新的String对象；使用StringBuffer类时，每次都会对StringBuffer对象本身进行操作，而不是生成新的对象并指向对象引用；"><a href="#String是不可变的对象，因此在每次对String类型进行改变的时候，都会生成一个新的String对象，然后指针指向新的String对象；使用StringBuffer类时，每次都会对StringBuffer对象本身进行操作，而不是生成新的对象并指向对象引用；" class="headerlink" title="String是不可变的对象，因此在每次对String类型进行改变的时候，都会生成一个新的String对象，然后指针指向新的String对象；使用StringBuffer类时，每次都会对StringBuffer对象本身进行操作，而不是生成新的对象并指向对象引用；"></a>String是不可变的对象，因此在每次对String类型进行改变的时候，都会生成一个新的String对象，然后指针指向新的String对象；使用StringBuffer类时，每次都会对StringBuffer对象本身进行操作，而不是生成新的对象并指向对象引用；</h4><h2 id="2-int和Integer的区别"><a href="#2-int和Integer的区别" class="headerlink" title="2.int和Integer的区别"></a>2.int和Integer的区别</h2><ul>
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Java面试题(一)</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Liang</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">March 22, 2021&nbsp;&nbsp;20:34:18</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="Java面试题"><a href="#Java面试题" class="headerlink" title="Java面试题"></a>Java面试题</h1><h2 id="1-String、StringBuffer和StringBuild的区别"><a href="#1-String、StringBuffer和StringBuild的区别" class="headerlink" title="1.String、StringBuffer和StringBuild的区别"></a>1.String、StringBuffer和StringBuild的区别</h2><h4 id="String（不可变、线程安全）：字符串常量，字符串长度不可变；内部通过final修饰的char数组存放字符，因此只能赋值一次，不可更改"><a href="#String（不可变、线程安全）：字符串常量，字符串长度不可变；内部通过final修饰的char数组存放字符，因此只能赋值一次，不可更改" class="headerlink" title="String（不可变、线程安全）：字符串常量，字符串长度不可变；内部通过final修饰的char数组存放字符，因此只能赋值一次，不可更改"></a>String（<strong>不可变、线程安全</strong>）：字符串常量，字符串长度不可变；内部通过<strong>final修饰的char数组</strong>存放字符，因此只能赋值一次，不可更改</h4><h4 id="StringBuffer（可变、线程安全）：字符串变量；StringBuffer的所有公开方法都是用过synchronized修饰的"><a href="#StringBuffer（可变、线程安全）：字符串变量；StringBuffer的所有公开方法都是用过synchronized修饰的" class="headerlink" title="StringBuffer（可变、线程安全）：字符串变量；StringBuffer的所有公开方法都是用过synchronized修饰的"></a>StringBuffer（<strong>可变、线程安全</strong>）：字符串变量；StringBuffer的所有公开方法都是用过<strong>synchronized</strong>修饰的</h4><h4 id="StringBuild（可变、线程不安全）"><a href="#StringBuild（可变、线程不安全）" class="headerlink" title="StringBuild（可变、线程不安全）"></a>StringBuild（<strong>可变、线程不安全</strong>）</h4><h4 id="String是不可变的对象，因此在每次对String类型进行改变的时候，都会生成一个新的String对象，然后指针指向新的String对象；使用StringBuffer类时，每次都会对StringBuffer对象本身进行操作，而不是生成新的对象并指向对象引用；"><a href="#String是不可变的对象，因此在每次对String类型进行改变的时候，都会生成一个新的String对象，然后指针指向新的String对象；使用StringBuffer类时，每次都会对StringBuffer对象本身进行操作，而不是生成新的对象并指向对象引用；" class="headerlink" title="String是不可变的对象，因此在每次对String类型进行改变的时候，都会生成一个新的String对象，然后指针指向新的String对象；使用StringBuffer类时，每次都会对StringBuffer对象本身进行操作，而不是生成新的对象并指向对象引用；"></a>String是不可变的对象，因此在每次对String类型进行改变的时候，都会生成一个新的String对象，然后指针指向新的String对象；使用StringBuffer类时，每次都会对StringBuffer对象本身进行操作，而不是生成新的对象并指向对象引用；</h4><h2 id="2-int和Integer的区别"><a href="#2-int和Integer的区别" class="headerlink" title="2.int和Integer的区别"></a>2.int和Integer的区别</h2><ul>
 <li><h4 id="int是基本数据类型；Integer是int的包装类"><a href="#int是基本数据类型；Integer是int的包装类" class="headerlink" title="int是基本数据类型；Integer是int的包装类"></a>int是<strong>基本数据类型</strong>；Integer是int的<strong>包装类</strong></h4></li>
 <li><h4 id="Integer变量必须实例化后才能使用；int变量不需要"><a href="#Integer变量必须实例化后才能使用；int变量不需要" class="headerlink" title="Integer变量必须实例化后才能使用；int变量不需要"></a>Integer变量必须实例化后才能使用；int变量不需要</h4></li>
 <li><h4 id="Integer实际是对象的引用，指向new的Integer对象；int是直接存储数据值"><a href="#Integer实际是对象的引用，指向new的Integer对象；int是直接存储数据值" class="headerlink" title="Integer实际是对象的引用，指向new的Integer对象；int是直接存储数据值"></a>Integer实际是<strong>对象的引用</strong>，指向new的Integer对象；int是直接存储数据值</h4></li>
@@ -285,104 +247,72 @@
 <li><h5 id="诸如String、Date等类对equals方法进行了重写的话，比较的是所指向的对象的内容"><a href="#诸如String、Date等类对equals方法进行了重写的话，比较的是所指向的对象的内容" class="headerlink" title="诸如String、Date等类对equals方法进行了重写的话，比较的是所指向的对象的内容"></a>诸如String、Date等类对equals方法进行了重写的话，比较的是所指向的对象的内容</h5></li>
 </ul>
 <h2 id="9-为什么重写equals还要重写hashCode？"><a href="#9-为什么重写equals还要重写hashCode？" class="headerlink" title="9.为什么重写equals还要重写hashCode？"></a>9.为什么重写<code>equals</code>还要重写<code>hashCode</code>？</h2><h2 id="10-Object若不重写hashCode-的话，hashCode-如何计算出来的？"><a href="#10-Object若不重写hashCode-的话，hashCode-如何计算出来的？" class="headerlink" title="10.Object若不重写hashCode()的话，hashCode()如何计算出来的？"></a>10.Object若不重写hashCode()的话，hashCode()如何计算出来的？</h2><h4 id="Object的hashCode方法是本地方法，该方法直接返回对象的内存地址"><a href="#Object的hashCode方法是本地方法，该方法直接返回对象的内存地址" class="headerlink" title="Object的hashCode方法是本地方法，该方法直接返回对象的内存地址"></a><strong>Object的hashCode方法是本地方法，该方法直接返回对象的内存地址</strong></h4>
-      
-    </div>
-    
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2021/03/13/JavaSE/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JavaSE</div>
-      <strong class="article-nav-caption">&gt;</strong>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-<div class="ds-share share" data-thread-key="Java面试题-一" data-title="Java面试题(一)" data-url="http://example.com/2021/03/22/Java%E9%9D%A2%E8%AF%95%E9%A2%98-%E4%B8%80/"  data-images="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4177375748,2484660470&amp;fm=11&amp;gp=0.jpg" data-content="Java面试题(一)">
-    <div class="ds-share-inline">
-      <ul  class="ds-share-icons-16">
-      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-      </ul>
-      <div class="ds-share-icons-more">
-      </div>
-    </div>
- </div>
- 
-
-
-
-
-
-</div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-      <div class="footer-left">
-        &copy; 2021 Liang
-      </div>
-        <div class="footer-right">
-          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
         </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Liang</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2021/03/22/Java%E9%9D%A2%E8%AF%95%E9%A2%98-%E4%B8%80/">http://example.com/2021/03/22/Java%E9%9D%A2%E8%AF%95%E9%A2%98-%E4%B8%80/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/Java%E9%9D%A2%E8%AF%95/"># Java面试</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2021/03/13/JavaSE/">JavaSE</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Liang | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
     </div>
-  </div>
 </footer>
+
     </div>
-    
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-
-
-<script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: true
-	}
-</script>
-
-<script src="/js/main.js"></script>
-
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
-
-
-  </div>
 </body>
 </html>
